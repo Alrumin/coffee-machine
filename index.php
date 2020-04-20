@@ -12,21 +12,21 @@
   </head>
   <body>
     <div class="container">
-      <div class="row coffee-machine">
+      <div class="row coffee-machine" id="coffee">
         <div class="col-6 coffee-list d-flex flex-column justify-content">
-          <div class="coffee-item">
+          <div class="coffee-item" onclick="buyCoffee('Американо',50, this)">
             <img src="img/americano.png" alt="americano">
             <span>Американо - 50 руб.</span>
           </div>   
-          <div class="coffee-item">
+          <div class="coffee-item" onclick="buyCoffee('Капучино', 92, this)">
             <img src="img/cappuccino.png" alt="cappuccino">
             <span>Капучино - 92 руб.</span>
           </div>         
-          <div class="coffee-item">
+          <div class="coffee-item" onclick="buyCoffee('Эспрессо', 66, this)">
             <img src="img/espresso.png" alt="espresso">
-            <span>Еспрессо - 66 руб.</span>
+            <span>Эспрессо - 66 руб.</span>
           </div>         
-          <div class="coffee-item">
+          <div class="coffee-item" onclick="buyCoffee('Латте', 60, this)">
             <img src="img/latte.png" alt="latte">
             <span>Латте - 60 руб.</span>
           </div>
@@ -55,7 +55,7 @@
               <div class="atm">
                 <img src="img/bill_acc.png" alt="atm">
               </div>
-              <button class="btn-dark btn-block mt-3">Сдача</button>
+              <button class="btn btn-dark btn-block mt-3">Сдача</button>
               <div class="change-box mt-3"></div>
             </div>
           </div>
@@ -64,6 +64,7 @@
     </div>
 
     <!-- Optional JavaScript -->
+    <script src="script.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
