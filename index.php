@@ -37,12 +37,12 @@
               <div class="display">
                 <p class="display-text">Выбирете кофе</p>
                 <div class="progress">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                   </div>
                 </div>
               </div>
               <div class="coffee-cup">
-                <img src="img/latte.png" alt="latte">
+                <img src="img/latte.png"  class=d-none alt="latte">
               </div>
             </div>
             <div class="col-6">
