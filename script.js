@@ -2,6 +2,8 @@
 let state = "waiting";
 let cupImg = document.querySelector(".coffee-cup img");
 let progressBar = document.querySelector(".progress-bar");
+let balanceInput = document.querySelector("Input[placeholder='Баланс']");
+
 cupImg.onclick = takeCoffee;
 
 function buyCoffee(name, price, element) {
@@ -9,9 +11,7 @@ function buyCoffee(name, price, element) {
     return;
   }
   
-  let balanceInput = document.querySelector("Input[placeholder='Баланс']");
-  
-  if (+balanceInput.value < price) {
+   if (+balanceInput.value < price) {
     changeDisplayText('Недостаточно средств');
     balanceInput.style.background = "crimson";
   } else {
@@ -84,9 +84,13 @@ function takeMoney(event) {
     bill.style.top = event.clientY - billWidth/2 + "px";
     bill.style.left = event.clientX - billHeight/2 + "px";
     }
-  bill.onmouseup = function(event) {
+  bill.onmouseup = function() {
     window.onmousemove = null;
-    console.log( inAtm(bill) );
+    if ( inAtm(bill) ) {
+      let billCost = +bill.getAttribute('cost');
+      balanceInput.value = +balanceInput.value + billCost;
+      bill.remove();
+    }
   }
 }
 
@@ -112,5 +116,39 @@ function inAtm(bill) {
     return false;
   }
  }
+ //----------------------------Сдача---------------------------------------------------------
+ 
+ let changeButton = document.querySelector(".change-btn");
+ changeButton.onclick = takeChange;
+ 
+function takeChange() {
+ tossCoin('10');
+}
+function tossCoin() {
+ let changeBox = document.querySelector(".change-box");
+ changeBox.style.position = "relative";
+ let changeBoxCoords = changeBox.getBoundingClientRect();
+ let randomWidth = getRandomInt(0, changeBoxCoords.width - 50);
+ let randomHeight = getRandomInt(0, changeBoxCoords.height - 50);
+ 
+ 
+ 
+ let coin = document.createElement("img");
+ coin.setAttribute('src','img/10rub.png');
+ coin.style.width = "50px";
+ coin.style.height = "50px";
+ changeBox.append(coin);
+ coin.style.position = "absolute";
+ coin.style.top = randomHeight + "px";
+ coin.style.left = randomWidth + "px";
+}
+ 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; 
+} 
+ 
+ 
  
  
