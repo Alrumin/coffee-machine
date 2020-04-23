@@ -45,3 +45,12 @@
 .coffee-oper {
   background: Seashell;
 }
+.bills {
+  margin-left: 12%;
+  margin-top: 10px;
+}
+
+.bills img {
+  width: 20%;
+  margin-left: 5px;
+}

@@ -62,6 +62,11 @@
         </div>
       </div>
     </div>
+    <div class="bills">
+      <img src="img/50rub.jpg" alt="50">
+      <img src="img/100rub.jpg" alt="100">
+      <img src="img/500rub.jpg" alt="500">
+    </div>
 
     <!-- Optional JavaScript -->
     <script src="script.js"></script>
